@@ -7,8 +7,8 @@ My self-hosted services deployed using [Kamal](https://kamal-deploy.org/).
 
 ## Usage
 1. Pull the repository.
-2. Change the `host` in `deploy.<service>.yml` (default: `hetzner`).
-3. Change the way of fetching secrets in `~/.kamal/secrets.<service>`.
+2. Change the `host` in `config/deploy.<service>.yml` (default: `hetzner`).
+3. Change the way of fetching secrets in `.kamal/secrets.<service>`.
 4. Run a [Makefile](Makefile) target to deploy a specific service.
 
 ## Services
