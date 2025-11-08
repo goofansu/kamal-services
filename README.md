@@ -7,8 +7,9 @@ My self-hosted services deployed using [Kamal](https://kamal-deploy.org/).
 
 ## Usage
 1. Pull the repository.
-2. Change the host key in the deploy YAMLs (default: `hetzner`).
-3. Check [Makefile](Makefile) to deploy a specific service.
+2. Change the `host` in `deploy.<service>.yml` (default: `hetzner`).
+3. Change the way of fetching secrets in `~/.kamal/secrets.<service>`.
+4. Run a [Makefile](Makefile) target to deploy a specific service.
 
 ## Services
 - [Atuin](https://docs.atuin.sh/self-hosting/docker/) (version: v18.10.0)
