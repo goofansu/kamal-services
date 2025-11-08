@@ -1,0 +1,7 @@
+service: dummy
+image: dummy
+registry:
+  server: localhost:5555
+builder:
+  driver: docker
+  arch: <%= Kamal::Utils.docker_arch %>
