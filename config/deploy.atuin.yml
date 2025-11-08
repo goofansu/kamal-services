@@ -19,7 +19,7 @@ accessories:
     env:
       clear:
         ATUIN_HOST: 0.0.0.0
-        ATUIN_OPEN_REGISTRATION: true
+        ATUIN_OPEN_REGISTRATION: false # Set true if accept new user registrations
         RUST_LOG: info,atuin_server=debug
       secret:
         - ATUIN_DB_URI
