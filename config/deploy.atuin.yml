@@ -31,3 +31,16 @@ accessories:
         interval: 1
         timeout: 1
         path: "/"
+  backup:
+    image: prodrigestivill/postgres-backup-local
+    host: *host
+    env:
+      clear:
+        POSTGRES_DB: atuin
+        POSTGRES_USER: atuin
+        POSTGRES_HOST: atuin-db
+        SCHEDULE: "@daily"
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+      - ./backups:/backups
