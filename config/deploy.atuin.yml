@@ -3,23 +3,23 @@ image: atuin
 accessories:
   db:
     image: postgres:14
-    host: hetzner
-    directories:
-      - ./data:/var/lib/postgresql/data/
+    host: &host hetzner # Change to your own host
     env:
       clear:
         POSTGRES_DB: atuin
         POSTGRES_USER: atuin
       secret:
         - POSTGRES_PASSWORD
+    directories:
+      - ./data:/var/lib/postgresql/data/
   server:
     image: ghcr.io/atuinsh/atuin:v18.10.0
-    host: hetzner
+    host: *host
     cmd: server start
     env:
       clear:
         ATUIN_HOST: 0.0.0.0
-        ATUIN_OPEN_REGISTRATION: false # Set true if accept new user registrations
+        ATUIN_OPEN_REGISTRATION: false # Set to true if accept new user registrations
         RUST_LOG: info,atuin_server=debug
       secret:
         - ATUIN_DB_URI
