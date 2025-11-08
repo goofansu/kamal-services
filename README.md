@@ -1,6 +1,6 @@
 # kamal-services
 
-My self-hosted services deployed using [Kamal accessory](https://kamal-deploy.org/docs/commands/accessory/).
+My self-hosted services deployed using [Kamal](https://kamal-deploy.org/).
 
 ## Requirements
 - [Kamal](https://kamal-deploy.org/docs/installation/)
