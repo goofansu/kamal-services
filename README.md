@@ -1,14 +1,14 @@
 # kamal-services
 
-My self-hosted services deployed using [Kamal](https://kamal-deploy.org/).
+My self-hosted services deployed using [Kamal accessory](https://kamal-deploy.org/docs/commands/accessory/).
 
 ## Requirements
 - [Kamal](https://kamal-deploy.org/docs/installation/)
 
-## Install
-```shell
-git clone git@github.com:goofansu/kamal-services.git
-```
+## Usage
+1. Pull the repository.
+2. Change the host key in the deploy YAMLs (default: `hetzner`).
+3. Check [Makefile](Makefile) to deploy a specific service.
 
 ## Services
-See [Makefile](Makefile).
+- [Atuin](https://docs.atuin.sh/self-hosting/docker/) (version: v18.10.0)
