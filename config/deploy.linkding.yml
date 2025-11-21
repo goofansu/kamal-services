@@ -1,0 +1,20 @@
+service: linkding
+image: linkding
+accessories:
+  server:
+    image: sissbruecker/linkding:latest
+    host: hetzner # Change to your own host
+    env:
+      secret:
+        - LD_SUPERUSER_NAME
+        - LD_SUPERUSER_PASSWORD
+    directories:
+      - ./data:/etc/linkding/data
+    proxy:
+      host: links.yejun.dev # Change to your own domain
+      app_port: 9090
+      ssl: true
+      healthcheck:
+        interval: 1
+        timeout: 1
+        path: "/"

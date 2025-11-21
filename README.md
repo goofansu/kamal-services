@@ -12,4 +12,5 @@ My self-hosted services deployed using [Kamal](https://kamal-deploy.org/).
 4. Run a [Makefile](Makefile) target to deploy a specific service.
 
 ## Services
-- [Atuin](https://docs.atuin.sh/self-hosting/docker/) (version: v18.10.0)
+- [Atuin](https://docs.atuin.sh/self-hosting/docker/) (tag: v18.10.0)
+- [Linkding](https://linkding.link/installation/) (tag: latest)
