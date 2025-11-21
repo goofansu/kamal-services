@@ -1,2 +1,6 @@
-atuin:
-	kamal accessory boot all -d atuin
+SERVICES := $(patsubst config/deploy.%.yml,%,$(wildcard config/deploy.*.yml))
+
+.PHONY: $(SERVICES)
+
+$(SERVICES):
+	kamal accessory boot all -d $@
