@@ -1,0 +1,33 @@
+service: miniflux
+image: miniflux
+accessories:
+  db:
+    image: postgres:17-alpine
+    host: &host hetzner # Change to your own host
+    env:
+      clear:
+        POSTGRES_DB: miniflux
+        POSTGRES_USER: miniflux
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+      - ./data:/var/lib/postgresql/data
+  server:
+    image: miniflux/miniflux:latest
+    host: *host
+    env:
+      clear:
+        RUN_MIGRATIONS: 1
+        CREATE_ADMIN: 1
+      secret:
+        - DATABASE_URL
+        - ADMIN_USERNAME
+        - ADMIN_PASSWORD
+    proxy:
+      host: feeds.yejun.dev # Change to your own domain
+      app_port: 8080
+      ssl: true
+      healthcheck:
+        interval: 1
+        timeout: 1
+        path: "/"

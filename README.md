@@ -14,3 +14,4 @@ My self-hosted services deployed using [Kamal](https://kamal-deploy.org/).
 ## Services
 - Atuin ([website](https://atuin.sh/), [guide](https://docs.atuin.sh/self-hosting/docker/), [docker-compose.yml](https://github.com/atuinsh/atuin/blob/main/docker-compose.yml))
 - Linkding ([website](https://linkding.link/), [guide](https://linkding.link/installation/), [docker-compose.yml](https://github.com/sissbruecker/linkding/blob/master/docker-compose.yml))
+- Miniflux ([website](https://miniflux.app/), [guide](https://miniflux.app/docs/docker.html), [docker-compose.yml](https://github.com/miniflux/v2/blob/main/contrib/docker-compose/basic.yml))
