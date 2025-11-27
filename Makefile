@@ -1,6 +1,10 @@
-SERVICES := $(patsubst config/deploy.%.yml,%,$(wildcard config/deploy.*.yml))
+TARGETS := $(patsubst config/deploy.%.yml,%,$(wildcard config/deploy.*.yml))
+REBOOT_TARGETS := $(addprefix reboot-,$(TARGETS))
 
-.PHONY: $(SERVICES)
+.PHONY: $(TARGETS) $(REBOOT_TARGETS)
 
-$(SERVICES):
+$(TARGETS):
 	kamal accessory boot all -d $@
+
+$(REBOOT_TARGETS):
+	kamal accessory reboot server -d $(patsubst reboot-%,%,$@)
