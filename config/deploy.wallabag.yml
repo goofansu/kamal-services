@@ -1,0 +1,20 @@
+service: wallabag
+image: wallabag
+accessories:
+  server:
+    image: wallabag/wallabag:latest
+    host: hetzner # Change to your own host
+    env:
+      clear:
+        SYMFONY__ENV__DOMAIN_NAME: https://saves.yejun.dev
+    directories:
+      - ./data:/var/www/wallabag/data
+      - ./images:/var/www/wallabag/web/assets/images
+    proxy:
+      host: saves.yejun.dev
+      app_port: 80
+      ssl: true
+      healthcheck:
+        interval: 1
+        timeout: 1
+        path: "/"
