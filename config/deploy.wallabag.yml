@@ -3,7 +3,7 @@ image: wallabag
 accessories:
   server:
     image: wallabag/wallabag:2.6.14
-    host: hetzner # Change to your own host
+    host: hetzner
     env:
       clear:
         SYMFONY__ENV__DOMAIN_NAME: https://saves.yejun.dev

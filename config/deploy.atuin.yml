@@ -3,7 +3,7 @@ image: atuin
 accessories:
   db:
     image: postgres:14
-    host: &host hetzner # Change to your own host
+    host: &host hetzner
     env:
       clear:
         POSTGRES_DB: atuin

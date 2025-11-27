@@ -3,7 +3,7 @@ image: linkding
 accessories:
   server:
     image: sissbruecker/linkding:1.44.1
-    host: hetzner # Change to your own host
+    host: hetzner
     env:
       secret:
         - LD_SUPERUSER_NAME
@@ -11,7 +11,7 @@ accessories:
     directories:
       - ./data:/etc/linkding/data
     proxy:
-      host: links.yejun.dev # Change to your own domain
+      host: links.yejun.dev
       app_port: 9090
       ssl: true
       healthcheck:
