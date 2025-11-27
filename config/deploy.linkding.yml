@@ -2,7 +2,7 @@ service: linkding
 image: linkding
 accessories:
   server:
-    image: sissbruecker/linkding:latest
+    image: sissbruecker/linkding:1.44.1
     host: hetzner # Change to your own host
     env:
       secret:

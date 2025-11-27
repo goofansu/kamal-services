@@ -13,7 +13,7 @@ accessories:
     directories:
       - ./data:/var/lib/postgresql/data
   server:
-    image: miniflux/miniflux:latest
+    image: miniflux/miniflux:2.2.14
     host: *host
     env:
       clear:

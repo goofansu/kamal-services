@@ -2,7 +2,7 @@ service: wallabag
 image: wallabag
 accessories:
   server:
-    image: wallabag/wallabag:latest
+    image: wallabag/wallabag:2.6.14
     host: hetzner # Change to your own host
     env:
       clear:
