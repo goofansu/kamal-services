@@ -18,3 +18,4 @@ My self-hosted services deployed using [Kamal](https://kamal-deploy.org/).
 - Wallabag ([website](https://wallabag.org/), [guide](https://doc.wallabag.org/admin/installation/installation/#installation-with-docker-or-docker-compose), [docker](https://github.com/wallabag/docker))
   - The default login is `wallabag:wallabag`. Change the password and enable 2FA after first deployment.
 - Grafana ([website](https://grafana.com/), [guide](https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/), [docker-compose.yml](https://github.com/grafana/loki/blob/main/production/docker-compose.yaml))
+  - Use Loki for logging: [configure Loki datasource in Grafana](https://grafana.com/docs/grafana/latest/datasources/loki/configure-loki-data-source/), [install Loki Docker plugin](https://grafana.com/docs/loki/latest/send-data/docker-driver/), and [configure Kamal logging to use Loki](https://gist.github.com/goofansu/792e70eddc5d313ff5428b299198d82f).
