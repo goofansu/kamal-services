@@ -1,0 +1,33 @@
+service: grafana
+image: grafana
+accessories:
+  loki:
+    image: grafana/loki:3.6.2
+    host: &host hetzner
+    port: "127.0.0.1:3100:3100"
+    cmd: -config.file=/etc/loki/local-config.yaml
+    directories:
+      - ./data:/loki
+    options:
+      user: "0"
+  server:
+    image: grafana/grafana:12.3.0
+    host: *host
+    env:
+      clear:
+        GF_SERVER_ROOT_URL: https://stats.yejun.dev
+      secret:
+        - GF_SECURITY_ADMIN_USER
+        - GF_SECURITY_ADMIN_PASSWORD
+    directories:
+      - ./data:/var/lib/grafana
+    options:
+      user: "0"
+    proxy:
+      host: stats.yejun.dev
+      app_port: 3000
+      ssl: true
+      healthcheck:
+        interval: 1
+        timeout: 1
+        path: "/api/health"
